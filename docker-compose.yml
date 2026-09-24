@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: sih26023_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: sih26023
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sih26023_backend
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgrespassword@postgres:5432/sih26023
+      - JWT_SECRET=sih26023_cmpdi_cil_secure_production_secret_key_2026
+      - ENVIRONMENT=production
+      - CORS_ORIGINS=http://localhost:3000,http://frontend:3000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sih26023_frontend
+    restart: always
+    depends_on:
+      - backend
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:

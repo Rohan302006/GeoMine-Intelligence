@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6D365" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#AA771C" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F2E59" />
+      <stop offset="100%" stop-color="#071933" />
+    </linearGradient>
+    <linearGradient id="crystalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring (Gold Accent) -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#goldGradient)" stroke-width="3" />
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#D4AF37" stroke-width="1" stroke-dasharray="3,3" opacity="0.6" />
+
+  <!-- Shield Base -->
+  <path d="M 100 15 
+           C 145 15, 175 35, 175 75 
+           C 175 125, 140 162, 100 185 
+           C 60 162, 25 125, 25 75 
+           C 25 35, 55 15, 100 15 Z"
+        fill="url(#shieldGrad)"
+        stroke="url(#goldGradient)"
+        stroke-width="3"
+        filter="url(#subtleShadow)" />
+
+  <!-- Inner Geological Strata Lines (Layering) -->
+  <path d="M 38 78 Q 100 96 162 78" fill="none" stroke="#334E68" stroke-width="2" opacity="0.7" />
+  <path d="M 46 102 Q 100 120 154 102" fill="none" stroke="#334E68" stroke-width="2" opacity="0.7" />
+  <path d="M 58 126 Q 100 144 142 126" fill="none" stroke="#334E68" stroke-width="2" opacity="0.7" />
+
+  <!-- Faceted Mineral Crystal (Centerpiece) -->
+  <!-- Top Facet -->
+  <polygon points="100,45 128,68 100,78 72,68" fill="#7DD3FC" opacity="0.9" />
+  <!-- Left Facet -->
+  <polygon points="72,68 100,78 100,118 64,88" fill="#0284C7" />
+  <!-- Right Facet -->
+  <polygon points="128,68 136,88 100,118 100,78" fill="#0369A1" />
+  <!-- Bottom Point -->
+  <polygon points="100,78 100,118 100,118" fill="#0284C7" />
+  <!-- Crystal Highlights -->
+  <line x1="100" y1="45" x2="100" y2="118" stroke="#BAE6FD" stroke-width="1.5" opacity="0.8" />
+  <line x1="72" y1="68" x2="128" y2="68" stroke="#E0F2FE" stroke-width="1.5" opacity="0.7" />
+
+  <!-- Crossed Mining Instruments / Geometric Accents in Gold -->
+  <!-- Left Pick/Gavel Blade -->
+  <path d="M 68 138 L 92 118 L 96 122 L 72 142 Z" fill="url(#goldGradient)" />
+  <path d="M 65 141 L 62 138 Q 78 122 88 114 L 92 118 Z" fill="#D4AF37" />
+
+  <!-- Right Compass/Gauge Blade -->
+  <path d="M 132 138 L 108 118 L 104 122 L 128 142 Z" fill="url(#goldGradient)" />
+  <path d="M 135 141 L 138 138 Q 122 122 112 114 L 108 118 Z" fill="#D4AF37" />
+
+  <!-- Laurel / Wreath Leaves (Left) -->
+  <path d="M 40 95 C 38 115, 48 135, 70 152" fill="none" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round" />
+  <circle cx="41" cy="105" r="2.5" fill="#D4AF37" />
+  <circle cx="47" cy="120" r="2.5" fill="#D4AF37" />
+  <circle cx="56" cy="135" r="2.5" fill="#D4AF37" />
+
+  <!-- Laurel / Wreath Leaves (Right) -->
+  <path d="M 160 95 C 162 115, 152 135, 130 152" fill="none" stroke="url(#goldGradient)" stroke-width="2" stroke-linecap="round" />
+  <circle cx="159" cy="105" r="2.5" fill="#D4AF37" />
+  <circle cx="153" cy="120" r="2.5" fill="#D4AF37" />
+  <circle cx="144" cy="135" r="2.5" fill="#D4AF37" />
+
+  <!-- Center Star of Intelligence at Top -->
+  <polygon points="100,24 103,32 111,32 105,37 107,45 100,40 93,45 95,37 89,32 97,32" fill="url(#goldGradient)" />
+
+  <!-- Micro Emblem Ribbon / Base Banner -->
+  <path d="M 60 162 Q 100 172 140 162 L 145 174 Q 100 184 55 174 Z" fill="#0B203E" stroke="url(#goldGradient)" stroke-width="1.5" />
+  <text x="100" y="171" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800" fill="#F6D365" text-anchor="middle" letter-spacing="1.5">GEOMINE</text>
+</svg>
